@@ -5,20 +5,20 @@
 >> Построен на принципах ООП, имеет оди запускающий файл для удобства и два независимых модуля, каждый из которых отвечает за свою функцию.
 >> Главный файл main.py из которого запускается проект, имеет два экземпляра класса tkinter для каждого из frameworks (окон). Происходит инициализация,задаются параметры
 
-  import tkinter as tk
-  from clock import *
-  from data_day import *
-  winwod1 = tk.Tk()
-  alarm = AlarmClock(winwod1)
-  alarm.pack()
-  winwod1.geometry('400x400')
-  winwod1.title('One')
-  data_d = fill()
-  root.geometry('400x400+500+0')
-  root.title('Two')
-  label_one = tk.Label(winwod1, text='Win number: 1')
-  label_one.pack()
-  winwod1.mainloop()
+      import tkinter as tk
+      from clock import *
+      from data_day import *
+      winwod1 = tk.Tk()
+      alarm = AlarmClock(winwod1)
+      alarm.pack()
+      winwod1.geometry('400x400')
+      winwod1.title('One')
+      data_d = fill()
+      root.geometry('400x400+500+0')
+      root.title('Two')
+      label_one = tk.Label(winwod1, text='Win number: 1')
+      label_one.pack()
+      winwod1.mainloop()
   
  >> clock.py - для реализации часов + будильника. В который мы передаем ранее созданный в main.py образец класса.
     В основе данного метода реализации я использовала класс self - для передачи аргументов между функциями в одной сессии и также all_alarms - список,в который мы 
@@ -31,13 +31,13 @@
   
   
   
-  import tkinter as tk
-  from tkinter import ttk as ttk
-  import datetime     
-  class AlarmClock(tk.Frame):
-      def __init__(self, master):
-          tk.Frame.__init__(self, master)
-          self.all_alarms = []
+    import tkinter as tk
+    from tkinter import ttk as ttk
+    import datetime     
+    class AlarmClock(tk.Frame):
+        def __init__(self, master):
+            tk.Frame.__init__(self, master)
+            self.all_alarms = []
 
           self.ini_body()
           self.ini_clock()
